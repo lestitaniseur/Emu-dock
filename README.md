@@ -1,58 +1,57 @@
+
+
 <p align="center">
-  <img src="Logo.png" alt="Logo" width="200">
+  <img src="Logo.png" alt="Emu-Dock Logo" width="200">
 </p>
 
-# Emu-dock
-Automatic x86 (amd64) Linux emulation on Apple Silicon using Docker
-x86 on ARM (Apple Silicon) using Docker + QEMU + XQuartz
+# Emu-Dock
+
+Automatic x86 (amd64) Linux emulation on Apple Silicon using Docker + QEMU + XQuartz.
 
 A GitHub-style project that provides automatic x86 (amd64) Linux emulation on Apple Silicon Macs using Docker, with optional GUI support via XQuartz.
 
 This repository behaves like a scripted environment, not a traditional macOS app.
 
-⸻
+---
 
-What This Project Does
-	•	Runs x86_64 Linux containers on ARM Macs
-	•	Uses Docker Desktop + QEMU (no manual emulator setup)
-	•	One-time setup, then one-command usage
-	•	Optional GUI/X11 application support via XQuartz
-	•	Reproducible and GitHub-friendly
+## What This Project Does
+- Runs x86_64 Linux containers on ARM Macs  
+- Uses Docker Desktop + QEMU (no manual emulator setup)  
+- One-time setup, then one-command usage  
+- Optional GUI/X11 application support via XQuartz  
+- Reproducible and GitHub-friendly  
 
-⸻
+---
 
-Requirements
+## Requirements
 
-Hardware
-	•	Apple Silicon Mac (M1 / M2 / M3)
+**Hardware**  
+- Apple Silicon Mac (M1 / M2 / M3)  
 
-Software
-	•	Docker Desktop for Mac (Apple Silicon)
-	•	Git
-	•	(Optional) XQuartz for GUI apps
+**Software**  
+- Docker Desktop for Mac (Apple Silicon)  
+- Git  
+- (Optional) XQuartz for GUI apps  
 
+---
 
+## One-Time Setup
 
-⸻
-
-One-Time Setup
-
-Clone the repository:
-
+**Clone the repository:**
+```
+sh
 git clone https://github.com/YOUR_USERNAME/x86-on-arm-docker.git
 cd x86-on-arm-docker
 
-Enable multi-architecture emulation and build the container:
 
-./scripts/setup.sh
+```
 
-What this does:
-	•	Enables QEMU binfmt support
-	•	Forces Docker to support linux/amd64
-	•	Builds the x86 container
+enable multi-architecture emulation and build the container:
 
+```
+s./scripts/setup.sh
 ⸻
-
+```
 Running an x86 Linux Shell
 
 Start an interactive x86 container:
@@ -62,7 +61,10 @@ Start an interactive x86 container:
 Verify architecture:
 
 uname -m
-# Expected output: x86_64
+
+Expected output:
+
+x86_64
 
 
 ⸻
@@ -72,14 +74,12 @@ Optional: GUI / X11 Support (XQuartz)
 This project supports running x86 Linux GUI applications using X11 forwarding.
 
 Install XQuartz
-
 Download and install XQuartz for macOS.
 
 After installation:
 	1.	Launch XQuartz
 	2.	Open XQuartz → Settings → Security
-	3.	Enable:
-	•	✅ Allow connections from network clients
+	3.	Enable: ✅ Allow connections from network clients
 	4.	Restart XQuartz
 
 Allow local connections:
@@ -98,8 +98,7 @@ DISPLAY=host.docker.internal:0 ./scripts/run.sh
 Inside the container, install and run a GUI app:
 
 apt update
-apt install -y x11-apps
-xclock
+apt install -y x11-apps xclock
 
 If XQuartz is running, the window will appear on macOS.
 
@@ -131,7 +130,6 @@ Docker Build Fails
 ./scripts/setup.sh
 
 
-
 ⸻
 
 Intended Use Cases
@@ -140,5 +138,4 @@ Intended Use Cases
 	•	Cross-architecture development
 	•	CI parity with x86 environments
 
-
-
+---
