@@ -127,13 +127,6 @@ Docker Build Fails
 ./scripts/setup.sh
 
 
-⸻
-
-How It Works (Technical Overview)
-	•	Docker forces linux/amd64
-	•	Docker Desktop uses QEMU automatically
-	•	binfmt_misc handles instruction translation
-	•	No manual QEMU configuration required
 
 ⸻
 
@@ -143,35 +136,5 @@ Intended Use Cases
 	•	Cross-architecture development
 	•	CI parity with x86 environments
 
-⸻
-
-Not Intended For
-	•	High-performance workloads
-	•	Gaming or GPU-heavy apps
-	•	Native macOS GUI apps
-
-⸻
-
-License
-
-MIT License (or choose your own)
-
-⸻
-
-Contributing
-
-Pull requests and improvements are welcome.
-
-⸻
-
-Maintainer Notes
-
-This repository is intentionally simple and transparent so users can understand and modify it easily.
-
-If you want to extend it:
-	•	Add GitHub Actions CI
-	•	Add distro variants
-	•	Add prebuilt images
-	•	Wrap it in a macOS launcher
 
 
