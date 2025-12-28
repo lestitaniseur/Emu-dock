@@ -1,4 +1,6 @@
-![Logo](Logo.png)
+<p align="center">
+  <img src="Logo.png" alt="Logo" width="200">
+</p>
 
 # Emu-dock
 Automatic x86 (amd64) Linux emulation on Apple Silicon using Docker
