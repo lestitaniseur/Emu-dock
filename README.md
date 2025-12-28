@@ -1,4 +1,6 @@
-add the mardown custo to cmd and other stuff 
+<p align="center">
+  <img src="Logo.png" alt="Emu-Dock Logo" width="200">
+</p>
 
 Emu-dock
 
@@ -26,14 +28,11 @@ One-Time Setup
 
 Clone the repository:
 
-```
 git clone https://github.com/YOUR_USERNAME/x86-on-arm-docker.git cd x86-on-arm-docker
-```
-nable multi-architecture emulation and build the container:
 
-.
+Enable multi-architecture emulation and build the container:
 
-/scripts/setup.sh
+./scripts/setup.sh
 
 What this does: • Enables QEMU binfmt support • Forces Docker to support linux/amd64 • Builds the x86 container
 
