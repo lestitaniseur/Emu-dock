@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/lestitaniseur/Emu-dock">
-    <img src="https://github.com/lestitaniseur/Emu-dock/blob/main/logo.png" alt="EmuDock Logo" width="200px"/>
+    <img src="https://github.com/lestitaniseur/Emu-dock/blob/main/logo.png" alt="EmuDock Logo" width="270px"/>
   </a>
 </p>
 
