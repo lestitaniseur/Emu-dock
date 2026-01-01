@@ -8,7 +8,7 @@ Emulate x86 Linux on Apple Silicon Macs using Docker — with GUI support
 
 ⸻
 
-##📌 Overview
+## 📌 Overview
 
 EmuDock is a helper project designed to simplify running x86 (amd64) Linux environments on ARM-based Apple Silicon Macs (M1 / M2 / M3) using Docker.
 
