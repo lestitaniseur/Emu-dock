@@ -2,89 +2,138 @@
   <img src="Logo.png" alt="Emu-Dock Logo" width="200">
 </p>
 
-EmuDock
+🚀 EmuDock
 
-EmuDock is a lightweight helper project that makes it easy to run and emulate x86 Linux environments on Apple Silicon (ARM) Macs using Docker. It is designed for developers who need to test, build, or run legacy x86 Linux applications on modern ARM-based macOS systems.
-
-By combining Docker’s multi-architecture support with QEMU emulation and XQuartz for graphical output, EmuDock provides both CLI and GUI support for x86 Linux containers.
+Emulate x86 Linux on Apple Silicon Macs using Docker — with GUI support
 
 ⸻
 
-🚀 Project Goals
-	•	Simplify x86 Linux emulation on ARM Macs
-	•	Provide an easy-to-use Docker-based workflow
-	•	Support graphical Linux applications (GUI) via XQuartz
-	•	Minimize manual configuration and setup
+📌 Overview
+
+EmuDock is a helper project designed to simplify running x86 (amd64) Linux environments on ARM-based Apple Silicon Macs (M1 / M2 / M3) using Docker.
+
+It leverages Docker’s multi-architecture capabilities (QEMU emulation under the hood) and adds GUI application support via XQuartz, allowing you to run both CLI and graphical Linux applications seamlessly on macOS.
+
+⸻
+
+🎯 Project Goals
+	•	✅ Run legacy or x86-only Linux software on ARM Macs
+	•	✅ Avoid heavy virtual machines
+	•	✅ Provide GUI (X11) application support
+	•	✅ Keep setup simple and script-driven
 
 ⸻
 
 ✨ Features
-	•	🖥️ x86 (amd64) Linux emulation on ARM (Apple Silicon)
-	•	🐳 Docker-based container setup
-	•	🔁 Automatic use of QEMU for cross-architecture execution
-	•	🎨 GUI application support using X11 and XQuartz
-	•	⚙️ Script-driven workflow (simple commands to run)
-	•	🧪 Ideal for testing legacy software or cross-platform builds
+	•	🖥 x86_64 (amd64) Linux emulation on Apple Silicon (ARM)
+	•	🐳 Docker-based containers
+	•	🔁 Automatic QEMU CPU emulation
+	•	🎨 GUI application support using X11 + XQuartz
+	•	⚙️ Simple script-based workflow
+	•	🧪 Ideal for testing, development, and legacy apps
 
 ⸻
 
 🧠 How It Works
-	1.	Docker runs an amd64 (x86_64) Linux image on an ARM Mac
-	2.	Docker automatically uses QEMU for CPU emulation
-	3.	X11 traffic from the container is forwarded to XQuartz on macOS
-	4.	GUI Linux apps appear as native windows on macOS
+	1.	Docker runs an amd64 Linux image on an ARM host
+	2.	Docker uses QEMU for cross-architecture emulation
+	3.	Linux applications send X11 output
+	4.	XQuartz displays Linux GUI apps as macOS windows
 
 ⸻
 
 📦 Requirements
+
+Hardware
 	•	Apple Silicon Mac (M1 / M2 / M3)
+
+Software
 	•	macOS
-	•	Docker Desktop for Mac￼
-	•	XQuartz￼
-	•	Internet connection (for pulling images)
+	•	Docker Desktop for Mac
+	•	XQuartz
 
 ⸻
 
 🔧 Installation
 
-1. Install Docker Desktop
+1️⃣ Install Docker Desktop
 
-Make sure Docker Desktop is installed and running:
+Download and install Docker Desktop:
+	•	https://www.docker.com/products/docker-desktop/
+
+Verify installation:
 
 docker --version
 
-2. Install XQuartz
 
-Download and install XQuartz:
+⸻
+
+2️⃣ Install XQuartz
+
+Download XQuartz from:
 	•	https://www.xquartz.org/
 
 After installation:
-	•	Log out and log back in
-	•	Open XQuartz → Settings → Security
-	•	Enable: “Allow connections from network clients”
+	1.	Log out and log back in
+	2.	Open XQuartz → Settings → Security
+	3.	Enable “Allow connections from network clients”
 
 ⸻
 
-▶️ Usage (Example Workflow)
+▶️ Usage (Manual Example)
 
-test::::::
+EmuDock will provide a script to automate this process.
+
+Allow X11 Connections
+
+xhost +localhost
+
+Run an x86 Linux Container
+
+docker run --platform linux/amd64 \
+  -e DISPLAY=host.docker.internal:0 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  --name emudock \
+  -it ubuntu:22.04 bash
+
+
+⸻
+
+🧪 Test GUI Applications
+
+Inside the container:
+
+apt update
+apt install -y x11-apps
+xeyes
+
+You should see a graphical window appear on macOS 🎉
+
 ⸻
 
 📜 Planned Script Features
-	•	Automatic detection of Apple Silicon
-	•	Automatic XQuartz configuration check
-	•	One-command container launch
-	•	Volume mounting support
-	•	Persistent containers
-	•	Optional desktop environments (XFCE, LXDE)
+	•	🔍 Apple Silicon detection
+	•	🧠 XQuartz availability check
+	•	🚀 One-command container launch
+	•	📁 Volume mounting support
+	•	💾 Persistent containers
+	•	🖥 Optional lightweight desktop environments (XFCE / LXDE)
 
+⸻
+
+🛣️ Roadmap
+	•	Bash automation script
+	•	Prebuilt Docker image
+	•	Desktop environment support
+	•	VS Code Dev Container integration
+	•	Extended documentation
 
 ⸻
 
 ⚠️ Limitations
-	•	Emulation is slower than native ARM containers
-	•	Not suitable for heavy graphics or GPU workloads
-	•	GUI performance depends on X11 forwarding
+	•	⏳ Emulation is slower than native ARM containers
+	•	🎮 Not suitable for GPU-heavy workloads
+	•	🪟 GUI performance depends on X11 forwarding
 
 ⸻
 
@@ -92,9 +141,22 @@ test::::::
 
 Contributions are welcome!
 	1.	Fork the repository
-	2.	Create a feature branch
+	2.	Create a new branch
 	3.	Commit your changes
 	4.	Open a Pull Request
 
 ⸻
 
+📄 License
+
+MIT License
+
+⸻
+
+💡 Motivation
+
+EmuDock exists to bridge the gap between legacy x86 Linux software and modern ARM-based Macs, without the overhead of full virtual machines.
+
+⸻
+
+Happy hacking 🚀
