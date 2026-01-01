@@ -2,7 +2,7 @@
   <img src="Logo.png" alt="Emu-Dock Logo" width="200">
 </p>
 
-🚀 EmuDock
+# 🚀 EmuDock
 
 Emulate x86 Linux on Apple Silicon Macs using Docker — with GUI support
 
