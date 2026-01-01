@@ -4,35 +4,34 @@
 
 # 🚀 EmuDock
 
-Emulate x86 Linux on Apple Silicon Macs using Docker — with GUI support
+- Emulate x86 Linux on Apple Silicon Macs using Docker — with GUI support
 
 
 
 ## 📌 Overview
 
 EmuDock is a helper project designed to simplify running x86 (amd64) Linux environments on ARM-based Apple Silicon Macs (M1 / M2 / M3) using Docker.
-
 It leverages Docker’s multi-architecture capabilities (QEMU emulation under the hood) and adds GUI application support via XQuartz, allowing you to run both CLI and graphical Linux applications seamlessly on macOS.
 
 
 
 ## 🎯 Project Goals
 
-✅ Run legacy or x86-only Linux software on ARM Macs
-✅ Avoid heavy virtual machines
-✅ Provide GUI (X11) application support
-✅ Keep setup simple and script-driven
+- ✅ Run legacy or x86-only Linux software on ARM Macs
+- ✅ Avoid heavy virtual machines
+- ✅ Provide GUI (X11) application support
+- ✅ Keep setup simple and script-driven
 
 
 ## ✨ Features
 
 
-🖥 x86_64 (amd64) Linux emulation on Apple Silicon (ARM)
-🐳 Docker-based containers
-🔁 Automatic QEMU CPU emulation
-🎨 GUI application support using X11 + XQuartz
-⚙️ Simple script-based workflow
-🧪 Ideal for testing, development, and legacy apps
+- 🖥 x86_64 (amd64) Linux emulation on Apple Silicon (ARM)
+- 🐳 Docker-based containers
+- 🔁 Automatic QEMU CPU emulation
+- 🎨 GUI application support using X11 + XQuartz
+- ⚙️ Simple script-based workflow
+- 🧪 Ideal for testing, development, and legacy apps
 
 
 
