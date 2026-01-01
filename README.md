@@ -2,100 +2,99 @@
   <img src="Logo.png" alt="Emu-Dock Logo" width="200">
 </p>
 
-Emu-dock
+EmuDock
 
-Automatic x86 (amd64) Linux emulation on Apple Silicon using Docker x86 on ARM (Apple Silicon) using Docker + QEMU + XQuartz
+EmuDock is a lightweight helper project that makes it easy to run and emulate x86 Linux environments on Apple Silicon (ARM) Macs using Docker. It is designed for developers who need to test, build, or run legacy x86 Linux applications on modern ARM-based macOS systems.
 
-A GitHub-style project that provides automatic x86 (amd64) Linux emulation on Apple Silicon Macs using Docker, with optional GUI support via XQuartz.
-
-This repository behaves like a scripted environment, not a traditional macOS app.
+By combining Docker’s multi-architecture support with QEMU emulation and XQuartz for graphical output, EmuDock provides both CLI and GUI support for x86 Linux containers.
 
 ⸻
 
-What This Project Does • Runs x86_64 Linux containers on ARM Macs • Uses Docker Desktop + QEMU (no manual emulator setup) • One-time setup, then one-command usage • Optional GUI/X11 application support via XQuartz • Reproducible and GitHub-friendly
+🚀 Project Goals
+	•	Simplify x86 Linux emulation on ARM Macs
+	•	Provide an easy-to-use Docker-based workflow
+	•	Support graphical Linux applications (GUI) via XQuartz
+	•	Minimize manual configuration and setup
 
 ⸻
 
-Requirements
-
-Hardware • Apple Silicon Mac (M1 / M2 / M3)
-
-Software • Docker Desktop for Mac (Apple Silicon) • Git • (Optional) XQuartz for GUI apps
-
-⸻
-
-One-Time Setup
-
-Clone the repository:
-
-git clone https://github.com/YOUR_USERNAME/x86-on-arm-docker.git cd x86-on-arm-docker
-
-Enable multi-architecture emulation and build the container:
-
-./scripts/setup.sh
-
-What this does: • Enables QEMU binfmt support • Forces Docker to support linux/amd64 • Builds the x86 container
+✨ Features
+	•	🖥️ x86 (amd64) Linux emulation on ARM (Apple Silicon)
+	•	🐳 Docker-based container setup
+	•	🔁 Automatic use of QEMU for cross-architecture execution
+	•	🎨 GUI application support using X11 and XQuartz
+	•	⚙️ Script-driven workflow (simple commands to run)
+	•	🧪 Ideal for testing legacy software or cross-platform builds
 
 ⸻
 
-Running an x86 Linux Shell
-
-Start an interactive x86 container:
-
-./scripts/run.sh
-
-Verify architecture:
-
-uname -m
-
-Expected output: x86_64
+🧠 How It Works
+	1.	Docker runs an amd64 (x86_64) Linux image on an ARM Mac
+	2.	Docker automatically uses QEMU for CPU emulation
+	3.	X11 traffic from the container is forwarded to XQuartz on macOS
+	4.	GUI Linux apps appear as native windows on macOS
 
 ⸻
 
-Optional: GUI / X11 Support (XQuartz)
-
-This project supports running x86 Linux GUI applications using X11 forwarding.
-
-Install XQuartz
-
-Download and install XQuartz for macOS.
-
-After installation: 1. Launch XQuartz 2. Open XQuartz → Settings → Security 3. Enable: • ✅ Allow connections from network clients 4. Restart XQuartz
-
-Allow local connections:
-
-xhost +localhost
+📦 Requirements
+	•	Apple Silicon Mac (M1 / M2 / M3)
+	•	macOS
+	•	Docker Desktop for Mac￼
+	•	XQuartz￼
+	•	Internet connection (for pulling images)
 
 ⸻
 
-Running GUI Apps Inside the Container
+🔧 Installation
 
-Start the container with X11 enabled:
+1. Install Docker Desktop
 
-DISPLAY=host.docker.internal:0 ./scripts/run.sh
+Make sure Docker Desktop is installed and running:
 
-Inside the container, install and run a GUI app:
+docker --version
 
-apt update apt install -y x11-apps xclock
+2. Install XQuartz
 
-If XQuartz is running, the window will appear on macOS.
+Download and install XQuartz:
+	•	https://www.xquartz.org/
 
-⸻
-
-How GUI Support Works • XQuartz runs the X11 server on macOS • Docker forwards display output via TCP • QEMU emulates x86 instructions • GUI apps behave like native Linux X11 apps
-
-⸻
-
-Common Issues
-
-Slow Performance • x86 emulation is slower than native ARM • Prefer CLI tools when possible
-
-GUI Not Appearing • Ensure XQuartz is running • Re-run xhost +localhost • Verify DISPLAY is set correctly
-
-Docker Build Fails • Make sure Docker Desktop is running • Re-run setup:
-
-./scripts/setup.sh
+After installation:
+	•	Log out and log back in
+	•	Open XQuartz → Settings → Security
+	•	Enable: “Allow connections from network clients”
 
 ⸻
 
-Intended Use Cases • Running legacy x86-only Linux tools • Testing x86 binaries on Apple Silicon • Cross-architecture development • CI parity with x86 environments
+▶️ Usage (Example Workflow)
+
+test::::::
+⸻
+
+📜 Planned Script Features
+	•	Automatic detection of Apple Silicon
+	•	Automatic XQuartz configuration check
+	•	One-command container launch
+	•	Volume mounting support
+	•	Persistent containers
+	•	Optional desktop environments (XFCE, LXDE)
+
+
+⸻
+
+⚠️ Limitations
+	•	Emulation is slower than native ARM containers
+	•	Not suitable for heavy graphics or GPU workloads
+	•	GUI performance depends on X11 forwarding
+
+⸻
+
+🤝 Contributing
+
+Contributions are welcome!
+	1.	Fork the repository
+	2.	Create a feature branch
+	3.	Commit your changes
+	4.	Open a Pull Request
+
+⸻
+
