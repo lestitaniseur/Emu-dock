@@ -1,58 +1,57 @@
 <p align="center">
   <a href="https://github.com/lestitaniseur/Emu-dock">
-    <img src="https://github.com/lestitaniseur/Emu-dock/blob/main/logo.png?raw=true" alt="EmuDock Logo" width="200">
+    <img src="https://github.com/lestitaniseur/Emu-dock/blob/main/logo.png?raw=true" alt="EmuDock Logo" width="120px"/>
   </a>
 </p>
 
-<h1 align="center">🚀 EmuDock</h1>
+<h1 align="center"><b>EmuDock</b></h1>
 
 <p align="center">
-  <strong>Emulate x86 Linux on Apple Silicon Macs using Docker — with native GUI support.</strong>
+  <a href="#-installation">Installation</a> |
+  <a href="#-usage">Usage</a> |
+  <a href="https://github.com/lestitaniseur/Emu-dock/releases">Latest Release</a> |
+  <a href="#-limitations">Limitations</a>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon)-000000?style=for-the-badge&logo=apple" alt="Platform">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/Architecture-x86__64-orange?style=for-the-badge" alt="Architecture">
-</p>
+<div align="center">
+  <img src="https://img.shields.io/github/v/release/lestitaniseur/Emu-dock?style=flat-square&color=blue" alt="Release" />
+  <img src="https://img.shields.io/badge/Platform-macOS-blue?style=flat-square" alt="Platform" />
+  <img src="https://img.shields.io/badge/Arch-x86__64-orange?style=flat-square" alt="Arch" />
+</div>
+
+<h5 align="center">
+Run x86 Linux GUI applications seamlessly on Apple Silicon. ⭐️
+</h5>
 
 ---
 
-## 📌 Overview
+## 📖 About
 
-**EmuDock** is a helper tool designed to simplify running x86 (amd64) Linux environments on ARM-based Apple Silicon Macs (M1 / M2 / M3 / M4). 
+**EmuDock** is a lightweight tool that allows you to run x86 (amd64) Linux environments on ARM-based Apple Silicon Macs (M1/M2/M3/M4) using Docker. 
 
-It leverages Docker’s multi-architecture capabilities (via QEMU emulation) and adds seamless GUI support via XQuartz, allowing you to run both CLI and graphical Linux applications without the overhead of a heavy virtual machine.
+By leveraging QEMU emulation and X11 forwarding via XQuartz, EmuDock lets you interact with graphical Linux software directly on your macOS desktop without the heavy resource cost of a traditional Virtual Machine.
 
-## ✨ Features
-
-* **🖥️ x86_64 Emulation:** Run legacy or x86-only Linux software on ARM Macs.
-* **🎨 GUI Support:** Full X11 forwarding allows Linux apps to appear as native macOS windows.
-* **🐳 Docker-Powered:** Uses the familiar Docker ecosystem for container management.
-* **⚙️ Script-Driven:** Simplified workflow to handle complex networking and display flags.
+> [!IMPORTANT]
+> **Performance Note:** Because this uses emulation to run x86 code on ARM processors, applications will run slower than native ARM containers. This tool is intended for development and legacy software compatibility, not high-performance gaming.
 
 ---
 
 ## 📦 Requirements
 
-### Hardware
-* **Apple Silicon Mac:** M1, M2, M3, or M4 series.
-
-### Software
-1. **Docker Desktop for Mac:** [Download here](https://www.docker.com/products/docker-desktop/).
-2. **XQuartz:** [Download here](https://www.xquartz.org/).
+* **Hardware:** Apple Silicon Mac (M-Series).
+* **Docker Desktop:** Required for the container engine.
+* **XQuartz:** Required for rendering the Linux GUI on macOS.
 
 ---
 
-## 🔧 Installation & Setup
+## 🔧 Installation
 
 ### 1. Configure XQuartz
-1.  Open **XQuartz**.
-2.  Go to **Settings** (or `Cmd + ,`) -> **Security**.
-3.  Check **"Allow connections from network clients"**.
-4.  **Restart XQuartz** (Quit and reopen).
+1. Open **XQuartz** and go to `Settings` > `Security`.
+2. Enable **"Allow connections from network clients"**.
+3. **Restart your Mac** or log out/in to apply these system-level changes.
 
-### 2. Prepare the Host
-Run this in your macOS terminal:
+### 2. Enable X11 Access
+Open your terminal and run:
 ```bash
 xhost +localhost
