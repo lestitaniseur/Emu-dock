@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/lestitaniseur/Emu-dock/blob/main/logo.png?raw=true" alt="EmuDock Logo" width="220">
+  <img src="https://github.com/lestitaniseur/Emu-dock/blob/main/logo.png?raw=true" alt="EmuDock Logo" width="200" style="border-radius: 20%;">
 </p>
 
 <h1 align="center">🚀 EmuDock</h1>
@@ -18,9 +18,9 @@
 
 ## 📌 Overview
 
-**EmuDock** is a helper project designed to simplify running x86 (amd64) Linux environments on ARM-based Apple Silicon Macs (M1 / M2 / M3 / M4).
-It leverages Docker’s multi-architecture capabilities (via QEMU emulation) and adds seamless GUI support via XQuartz, allowing you to run both CLI and graphical Linux applications without the overhead of a full virtual machine.
+**EmuDock** is a helper tool designed to simplify running x86 (amd64) Linux environments on ARM-based Apple Silicon Macs (M1 / M2 / M3 / M4). 
 
+It leverages Docker’s multi-architecture capabilities (via QEMU emulation) and adds seamless GUI support via XQuartz, allowing you to run both CLI and graphical Linux applications without the overhead of a heavy virtual machine.
 
 ## ✨ Features
 
@@ -28,44 +28,41 @@ It leverages Docker’s multi-architecture capabilities (via QEMU emulation) and
 * **🎨 GUI Support:** Full X11 forwarding allows Linux apps to appear as native macOS windows.
 * **🐳 Docker-Powered:** Uses the familiar Docker ecosystem for container management.
 * **⚙️ Script-Driven:** Simplified workflow to handle complex networking and display flags.
-* **🧪 Ideal for Testing:** Perfect for developers needing to test amd64 binaries.
+* **🧪 Ideal for Testing:** Perfect for developers needing to test `amd64` binaries or environments.
 
 ---
 
 ## 🧠 How It Works
 
-1.  **Docker** runs an `amd64` Linux image on an ARM host.
-2.  **QEMU** handles the cross-architecture translation under the hood.
-3.  **X11 Forwarding** sends the application's graphical output to the host.
-4.  **XQuartz** renders the GUI directly on your macOS desktop.
+1.  **Host:** macOS running on Apple Silicon (ARM64).
+2.  **Emulation:** Docker uses QEMU to translate `amd64` instructions for the ARM processor.
+3.  **Display:** The containerized application sends X11 signals to the host's IP.
+4.  **Rendering:** XQuartz receives the signals and renders the GUI as a native macOS window.
 
 ---
 
 ## 📦 Requirements
 
 ### Hardware
-* Apple Silicon Mac (M1 / M2 / M3 / M4 series)
+* **Apple Silicon Mac:** M1, M2, M3, or M4 series.
 
 ### Software
-* **macOS**
-* **Docker Desktop for Mac** - [Download](https://www.docker.com/products/docker-desktop/)
-* **XQuartz** - [Download](https://www.xquartz.org/)
+* **macOS:** 12.0 (Monterey) or newer recommended.
+* **Docker Desktop for Mac:** [Download here](https://www.docker.com/products/docker-desktop/).
+* **XQuartz:** [Download here](https://www.xquartz.org/).
 
 ---
 
 ## 🔧 Installation & Setup
 
 ### 1. Configure XQuartz
+To allow Docker to talk to your Mac's display server:
 1.  Open **XQuartz**.
-2.  Navigate to **Settings** (or `Cmd + ,`).
-3.  Go to the **Security** tab.
-4.  Enable **"Allow connections from network clients"**.
-5.  **Restart XQuartz** (Quit and reopen) for changes to take effect.
+2.  Go to **Settings** (or `Cmd + ,`) -> **Security**.
+3.  Check the box: **"Allow connections from network clients"**.
+4.  **Important:** Restart XQuartz (Quit and reopen) for changes to take effect.
 
-### 2. Enable Host Access
-Run the following command in your macOS terminal to allow Docker to connect to the X11 server:
-
+### 2. Prepare the Host
+Before running your container, allow the local machine to accept X11 connections:
 ```bash
 xhost +localhost
-```
-
