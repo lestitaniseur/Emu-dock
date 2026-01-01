@@ -18,19 +18,21 @@ It leverages Docker’s multi-architecture capabilities (QEMU emulation under th
 
 ## 🎯 Project Goals
 
-		✅ Run legacy or x86-only Linux software on ARM Macs
-		✅ Avoid heavy virtual machines
-		✅ Provide GUI (X11) application support
-		✅ Keep setup simple and script-driven
+✅ Run legacy or x86-only Linux software on ARM Macs
+✅ Avoid heavy virtual machines
+✅ Provide GUI (X11) application support
+✅ Keep setup simple and script-driven
 
 
 ## ✨ Features
-	•	🖥 x86_64 (amd64) Linux emulation on Apple Silicon (ARM)
-	•	🐳 Docker-based containers
-	•	🔁 Automatic QEMU CPU emulation
-	•	🎨 GUI application support using X11 + XQuartz
-	•	⚙️ Simple script-based workflow
-	•	🧪 Ideal for testing, development, and legacy apps
+
+
+🖥 x86_64 (amd64) Linux emulation on Apple Silicon (ARM)
+🐳 Docker-based containers
+🔁 Automatic QEMU CPU emulation
+🎨 GUI application support using X11 + XQuartz
+⚙️ Simple script-based workflow
+🧪 Ideal for testing, development, and legacy apps
 
 
 
@@ -45,12 +47,13 @@ It leverages Docker’s multi-architecture capabilities (QEMU emulation under th
 📦 Requirements
 
 Hardware
-	•	Apple Silicon Mac (M1 / M2 / M3) arm structure
+ 
+  Apple Silicon Mac (M1 / M2 / M3) arm structure
 
 Software
-	•	macOS
-	•	Docker Desktop for Mac
-	•	XQuartz
+•	macOs
+•	Docker Desktop for Mac
+•	XQuartz
 
 
 
@@ -128,5 +131,4 @@ Contributions are welcome!
 	2.	Create a new branch
 	3.	Commit your changes
 	4.	Open a Pull Request
-
 
