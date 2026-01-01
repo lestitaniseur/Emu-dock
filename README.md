@@ -18,10 +18,10 @@ It leverages Docker’s multi-architecture capabilities (QEMU emulation under th
 
 ## 🎯 Project Goals
 
-	•	✅ Run legacy or x86-only Linux software on ARM Macs
-	•	✅ Avoid heavy virtual machines
-	•	✅ Provide GUI (X11) application support
-	•	✅ Keep setup simple and script-driven
+		✅ Run legacy or x86-only Linux software on ARM Macs
+		✅ Avoid heavy virtual machines
+		✅ Provide GUI (X11) application support
+		✅ Keep setup simple and script-driven
 
 
 ## ✨ Features
