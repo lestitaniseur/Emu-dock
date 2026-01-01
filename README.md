@@ -11,7 +11,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon)-000000?style=for-the-badge&logo=apple" alt="Platform">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/Architecture-x86__64-orange?style=for-the-badge" alt="Architecture">
 </p>
 
 ---
@@ -30,6 +29,7 @@ Instead of spinning up a resource-heavy Virtual Machine, EmuDock leverages Docke
 * **🛠 Simple Workflow:** Easy-to-use scripts to handle networking and display logic.
 * **🧪 Development Ready:** Perfect for testing legacy binaries, proprietary x86 drivers, or Linux-only software.
 
+  
 ## 🧠 How It Works
 
 
@@ -64,5 +64,8 @@ To allow Docker to talk to your Mac's display server:
 
 ### 2. Prepare the Host
 Before running a container, allow the local machine to accept X11 connections:
-```bash
+
+```
 xhost +localhost
+```
+
