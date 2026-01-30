@@ -11,8 +11,7 @@
   <a href="#-supported-environments">Environments</a> |
   <a href="#-requirements">Requirements</a> |
   <a href="#-installation">Installation</a> |
-  <a href="#-usage">Usage</a> |
-  <a href="#-limitations">Limitations</a>
+  <a href="#-aliases--command-example">Aliases & Command Example</a> |
 </p>
 
 ---
@@ -39,7 +38,7 @@ EmuDock provides **multiple Linux environments**, each serving a different purpo
 
 **Type:** Minimal command-line Linux  
 **Architecture:** x86_64 (emulated)  
-**GUI:** ❌ No  
+**GUI:** ✅ Yes (XQuartz)    
 
 **Description:**  
 A lightweight Debian container intended for:
@@ -66,7 +65,7 @@ A lightweight Debian container intended for:
 
 **Type:** Minimal command-line Linux  
 **Architecture:** x86_64 (emulated)  
-**GUI:** ❌ No  
+**GUI:** ✅ Yes (XQuartz)  
 
 **Description:**  
 An Ubuntu-based container for users who prefer:
@@ -171,15 +170,11 @@ chmod +x Installer.sh
 The menu uses arrow keys and color highlights for easy navigation.
 
 ---
-
-
-🗂 Persistent Containers & Aliases
+## 🗂 Aliases & Command Example
 
 After installation, the following containers are created :
 
-
-## Command Example
-
+### Command Example
 ```bash
 alias debian='docker start -ai emudock-debian'
 ```
@@ -192,4 +187,3 @@ alias ubuntu='docker start -ai emudock-ubuntu'
 alias xfce='docker start -ai emudock-xfce'
 ````
 
-##test
